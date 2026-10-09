@@ -12,15 +12,10 @@ A responsive student portfolio built with HTML5, external CSS, and vanilla JavaS
 
 ## JavaScript features
 
-1. Contact form validation and on-page preview (compulsory). It is a browser demonstration only; no message is sent.
-2. Light/dark theme switch.
-3. Expandable project details.
-4. Project/skills search with reset and no-match feedback.
-5. Gallery Previous/Next viewer with wrap-around boundaries.
-6. Mobile navigation open/close.
-7. Weekly study-hours calculator.
-
-The assignment requires the compulsory contact form feature plus any three additional features. This starter contains more than three; test them all and be ready to explain how they work.
+1. Light/dark theme switch.
+2. Project category tabs, text search, animated filtering and project-detail modal.
+3. Photo gallery Previous/Next viewer with wrap-around boundaries.
+4. Native required-field validation on the contact form. The form is a browser demonstration only; no message is sent.
 
 ## Run locally in IntelliJ IDEA
 
@@ -38,13 +33,13 @@ Open this folder as a project in IntelliJ IDEA. Open `index.html` and use your b
 - Add a small improvement after the first Render deployment, commit it, and confirm Render redeploys.
 - Replace any sample wording or project claims that do not accurately describe your own work.
 
-## Deploy to Render
+## Deploy or update on Render
 
-Create a GitHub repository and push the contents of this folder so `index.html` is at the repository root. In Render, create a **Static Site** connected to that repository and use:
+For the existing Render website, commit and push the changes to its connected GitHub branch; with Auto Deploy enabled, Render will publish the update automatically. If configuring the static site again, use the repository with `index.html` at its root and set:
 
 - Root Directory: leave blank
 - Build Command: `echo "No build required"`
 - Publish Directory: `.`
-- Auto Deploy: enabled for the branch containing your final work (usually `main`)
+- Auto Deploy: enabled for the branch connected to the existing site
 
-After deployment, test the public `https://...onrender.com` URL, including images, audio, video, navigation, all JavaScript features and the contact form.
+If Auto Deploy is disabled, trigger a deploy from the Render dashboard after pushing. Then open the existing `https://...onrender.com` URL and check the Projects filters, search, modal, theme switch, gallery, and media.

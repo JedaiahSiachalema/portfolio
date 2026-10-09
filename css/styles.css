@@ -2104,3 +2104,328 @@ footer {
         animation-duration: 1ms;
     }
 }
+
+/* ---------- PROJECTS ---------- */
+.project-tools {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 320px);
+    align-items: end;
+    gap: 1.5rem;
+    margin: 2rem 0 0.75rem;
+}
+
+.project-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.project-filter,
+.project-search-controls button {
+    min-height: 42px;
+    padding: 0.65rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background: var(--surface);
+    color: var(--text);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.project-filter:hover,
+.project-filter:focus-visible,
+.project-search-controls button:hover,
+.project-search-controls button:focus-visible {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.project-filter.is-active {
+    border-color: var(--accent);
+    background: var(--accent);
+    color: #fff;
+}
+
+.project-search label {
+    margin-bottom: 0.5rem;
+}
+
+.project-search-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.project-search-controls input {
+    min-width: 0;
+}
+
+.project-search-controls button {
+    flex: 0 0 auto;
+}
+
+.project-results {
+    min-height: 1.6em;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.2rem;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--accent);
+    background: var(--surface);
+    box-shadow: 0 12px 30px var(--shadow);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.project-card[hidden],
+.project-empty[hidden] {
+    display: none;
+}
+
+.project-card-entering {
+    animation: project-card-enter 280ms ease both;
+}
+
+@keyframes project-card-enter {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.project-card-topline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.project-category {
+    margin: 0;
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+}
+
+.project-number {
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+.project-card h3 {
+    margin: 1rem 0 0.4rem;
+    font-size: 1.35rem;
+    line-height: 1.3;
+}
+
+.project-card > p {
+    flex: 1;
+    margin: 0.5rem 0 1.2rem;
+    color: var(--muted);
+}
+
+.technology-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.technology-list li {
+    padding: 0.3rem 0.65rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface-light);
+    color: var(--text);
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.project-card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.55rem 0.8rem;
+    margin-top: 1.4rem;
+}
+
+.project-details-button {
+    padding: 0.55rem 0.8rem;
+    border: 0;
+    border-radius: 4px;
+    background: var(--accent);
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.project-details-button:hover,
+.project-details-button:focus-visible {
+    background: var(--accent-dark);
+    transform: translateY(-1px);
+}
+
+.project-link {
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.project-link.unavailable {
+    color: var(--muted);
+    font-weight: 400;
+}
+
+.project-empty {
+    margin: 1.5rem 0 0;
+    padding: 1.5rem;
+    border: 1px dashed var(--border);
+    color: var(--muted);
+    text-align: center;
+}
+
+.project-modal {
+    width: min(92vw, 560px);
+    max-height: min(85vh, 700px);
+    padding: 1.75rem;
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    background: var(--surface);
+    color: var(--text);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+}
+
+.project-modal::backdrop {
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(3px);
+}
+
+.project-modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.project-modal-header h2 {
+    margin: 0.4rem 0 0;
+    font-size: 1.8rem;
+    line-height: 1.2;
+}
+
+.project-modal > p {
+    margin: 1.25rem 0;
+    color: var(--muted);
+}
+
+.project-modal h3 {
+    margin: 0 0 0.75rem;
+    font-size: 1rem;
+}
+
+.project-modal-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1rem;
+    margin-top: 1.5rem;
+}
+
+.project-modal-close {
+    flex: 0 0 auto;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--surface-light);
+    color: var(--text);
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.project-modal-close:hover,
+.project-modal-close:focus-visible {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+@media (max-width: 900px) {
+    .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .project-tools {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-filters {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .project-filter {
+        padding-inline: 0.5rem;
+    }
+
+    .project-filter[data-category="all"] {
+        grid-column: 1 / -1;
+    }
+
+    .project-search-controls {
+        align-items: stretch;
+    }
+
+    .project-search-controls button {
+        padding-inline: 0.75rem;
+    }
+
+    .project-card {
+        padding: 1.25rem;
+    }
+
+    .project-modal {
+        padding: 1.25rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .project-card-entering {
+        animation-duration: 1ms;
+    }
+
+    .project-card,
+    .project-filter,
+    .project-search-controls button,
+    .project-details-button {
+        transition-duration: 1ms;
+    }
+}

@@ -36,6 +36,7 @@
 
         <div class="nav-links">
             <a href="#about">About</a>
+            <a href="#projects">Projects</a>
             <a href="#hobbies">Hobbies</a>
             <a href="#learning">Learning</a>
             <a href="#photos">Photos</a>
@@ -70,6 +71,9 @@
 
             <a href="#media" class="secondary-button">
                 My Media
+            </a>
+            <a href="#projects" class="secondary-button">
+                View Projects
             </a>
         </div>
 
@@ -139,11 +143,138 @@
     </section>
 
 
+    <!-- PROJECTS -->
+    <section id="projects" class="content-section">
+
+        <div class="section-heading">
+            <span>02</span>
+            <h2>My Projects</h2>
+        </div>
+
+        <p class="section-intro">
+            A selection of projects I have worked on. Use the categories or search
+            to find a project; links are shown only when a real URL is available.
+        </p>
+
+        <div class="project-tools">
+            <div class="project-filters" role="group" aria-label="Filter projects by category">
+                <button class="project-filter is-active" type="button" data-category="all" aria-pressed="true">All</button>
+                <button class="project-filter" type="button" data-category="web" aria-pressed="false">Web Development</button>
+                <button class="project-filter" type="button" data-category="java" aria-pressed="false">Java</button>
+                <button class="project-filter" type="button" data-category="python" aria-pressed="false">Python</button>
+                <button class="project-filter" type="button" data-category="other" aria-pressed="false">Other</button>
+            </div>
+
+            <div class="project-search">
+                <label for="project-search">Search projects</label>
+                <div class="project-search-controls">
+                    <input id="project-search" type="search" placeholder="Try a name or technology" autocomplete="off">
+                    <button id="clear-project-search" type="button">Clear</button>
+                </div>
+            </div>
+        </div>
+
+        <p id="project-results" class="project-results" aria-live="polite">Showing 3 projects.</p>
+
+        <div class="project-grid" id="project-grid">
+            <article class="project-card" data-category="web">
+                <div class="project-card-topline">
+                    <span class="project-category">Web Development</span>
+                    <span class="project-number">01</span>
+                </div>
+                <h3>Personal Portfolio Website</h3>
+                <p>A personal website built with core web technologies to share information, interests, and learning projects.</p>
+                <ul class="technology-list" aria-label="Technologies">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                </ul>
+                <div class="project-card-actions">
+                    <button class="project-details-button" type="button"
+                            data-title="Personal Portfolio Website"
+                            data-category="Web Development"
+                            data-description="A personal website built with HTML, CSS, and JavaScript to share information, interests, and learning projects.">
+                        View details
+                    </button>
+                    <span class="project-link unavailable" aria-label="GitHub link not provided">GitHub link not provided</span>
+                    <span class="project-link unavailable" aria-label="Live demo link not provided">Live demo not provided</span>
+                </div>
+            </article>
+
+            <article class="project-card" data-category="java">
+                <div class="project-card-topline">
+                    <span class="project-category">Java</span>
+                    <span class="project-number">02</span>
+                </div>
+                <h3>Customer Manager</h3>
+                <p>A Java application built with Maven in IntelliJ IDEA.</p>
+                <ul class="technology-list" aria-label="Technologies">
+                    <li>Java</li>
+                    <li>Maven</li>
+                    <li>IntelliJ IDEA</li>
+                </ul>
+                <div class="project-card-actions">
+                    <button class="project-details-button" type="button"
+                            data-title="Customer Manager"
+                            data-category="Java"
+                            data-description="A Java application built with Maven in IntelliJ IDEA.">
+                        View details
+                    </button>
+                    <span class="project-link unavailable" aria-label="GitHub link not provided">GitHub link not provided</span>
+                    <span class="project-link unavailable" aria-label="Live demo link not provided">Live demo not provided</span>
+                </div>
+            </article>
+
+            <article class="project-card" data-category="python">
+                <div class="project-card-topline">
+                    <span class="project-category">Python</span>
+                    <span class="project-number">03</span>
+                </div>
+                <h3>Weather Prediction App</h3>
+                <p>A Python-based weather prediction project.</p>
+                <ul class="technology-list" aria-label="Technologies">
+                    <li>Python</li>
+                </ul>
+                <div class="project-card-actions">
+                    <button class="project-details-button" type="button"
+                            data-title="Weather Prediction App"
+                            data-category="Python"
+                            data-description="A Python-based weather prediction project.">
+                        View details
+                    </button>
+                    <span class="project-link unavailable" aria-label="GitHub link not provided">GitHub link not provided</span>
+                    <span class="project-link unavailable" aria-label="Live demo link not provided">Live demo not provided</span>
+                </div>
+            </article>
+        </div>
+
+        <p id="project-empty" class="project-empty" hidden>No projects match these filters. Try another search or category.</p>
+
+        <dialog class="project-modal" id="project-modal" aria-labelledby="project-modal-title">
+            <div class="project-modal-header">
+                <div>
+                    <p class="project-category" id="project-modal-category"></p>
+                    <h2 id="project-modal-title"></h2>
+                </div>
+                <button class="project-modal-close" id="close-project-modal" type="button" aria-label="Close project details">&times;</button>
+            </div>
+            <p id="project-modal-description"></p>
+            <h3>Technologies</h3>
+            <ul class="technology-list" id="project-modal-technologies" aria-label="Project technologies"></ul>
+            <div class="project-modal-links">
+                <span class="project-link unavailable">GitHub link not provided</span>
+                <span class="project-link unavailable">Live demo not provided</span>
+            </div>
+        </dialog>
+
+    </section>
+
+
     <!-- HOBBIES -->
     <section id="hobbies" class="content-section">
 
         <div class="section-heading">
-            <span>02</span>
+            <span>03</span>
             <h2>My Hobbies</h2>
         </div>
 
@@ -195,7 +326,7 @@
     <section id="learning" class="content-section">
 
         <div class="section-heading">
-            <span>03</span>
+            <span>04</span>
             <h2>My Learning Plan</h2>
         </div>
 
@@ -305,7 +436,7 @@
     <section id="photos" class="content-section">
 
         <div class="section-heading">
-            <span>04</span>
+            <span>05</span>
             <h2>My Photos</h2>
         </div>
 
@@ -333,7 +464,7 @@
     <section id="media" class="content-section">
 
         <div class="section-heading">
-            <span>05</span>
+            <span>06</span>
             <h2>My Media</h2>
         </div>
 
@@ -373,7 +504,7 @@
     <section id="contact" class="content-section">
 
         <div class="section-heading">
-            <span>06</span>
+            <span>07</span>
             <h2>Contact Me</h2>
         </div>
 
@@ -490,7 +621,9 @@
 </footer>
 
 
-<!-- THEME TOGGLE JAVASCRIPT -->
+<script src="js/script.js" defer></script>
+
+<!-- THEME AND PHOTO CONTROLS -->
 
 <script>
 
