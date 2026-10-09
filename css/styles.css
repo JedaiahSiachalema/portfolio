@@ -1987,3 +1987,120 @@ footer {
      }
 
  }
+/* ---------- PHOTO CAROUSEL ---------- */
+#photos .photo-gallery {
+    display: block;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.photo-gallery figure {
+    background: var(--surface);
+}
+
+.photo-gallery img {
+    width: 100%;
+    max-height: 480px;
+    object-fit: contain;
+}
+
+.photo-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.photo-controls button {
+    padding: 0.65rem 1rem;
+    border: 0;
+    border-radius: 6px;
+    background: var(--accent);
+    color: white;
+    font: inherit;
+    cursor: pointer;
+}
+
+.photo-controls button:hover,
+.photo-controls button:focus-visible {
+    filter: brightness(1.1);
+}
+
+.photo-controls span {
+    color: var(--muted);
+}
+
+.photo-controls button {
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+#gallery-image.slide-next {
+    animation: photo-slide-next 350ms ease both;
+}
+
+#gallery-image.slide-previous {
+    animation: photo-slide-previous 350ms ease both;
+}
+
+@keyframes photo-slide-next {
+    from { opacity: 0; transform: translateX(24px) scale(0.98); }
+    to { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+@keyframes photo-slide-previous {
+    from { opacity: 0; transform: translateX(-24px) scale(0.98); }
+    to { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+.code-background {
+    position: absolute;
+    z-index: 1;
+    top: 26%;
+    right: 3%;
+    width: min(48%, 620px);
+    height: 340px;
+    overflow: hidden;
+    pointer-events: none;
+    color: #9ca3af;
+    opacity: 0.18;
+    mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent);
+}
+
+.code-background pre {
+    margin: 0;
+    font: 600 clamp(0.8rem, 1.3vw, 1rem)/1.8 monospace;
+    animation: code-scroll 18s ease-in-out infinite alternate;
+}
+
+.code-background span {
+    color: #ff8a3d;
+}
+
+@keyframes code-scroll {
+    to { transform: translateY(-90px); }
+}
+
+@media (max-width: 700px) {
+    .code-background {
+        top: 36%;
+        right: 0;
+        width: 90%;
+        opacity: 0.1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .code-background pre {
+        animation: none;
+    }
+
+    #gallery-image.slide-next,
+    #gallery-image.slide-previous {
+        animation-duration: 1ms;
+    }
+}
